@@ -6,7 +6,6 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import EmailIcon from "@mui/icons-material/Email";
 import WorkIcon from "@mui/icons-material/Work";
-import { maxWidth } from "@mui/system";
 import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import { NavLink, useNavigate, useParams } from "react-router-dom";
@@ -35,7 +34,7 @@ function View() {
 
   useEffect(() => {
     getUsersData();
-  }, []);
+  });
 
   const deleteUser = async (id) => {
     const resp = await fetch(

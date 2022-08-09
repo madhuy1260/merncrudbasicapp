@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useContext } from "react";
+import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
@@ -70,7 +70,7 @@ function Register() {
   return (
     <div className="container">
       <NavLink to="/">Home</NavLink>
-      <Form className="mt-5" onSubmit={saveDetails}>
+      <Form className="mt-5" onSubmit={(e) => saveDetails(e)}>
         <div className="row">
           <div className="mb-3 col-lg-6 col-md-6 col-12">
             <Form.Group className="mb-3" controlId="formBasicName">

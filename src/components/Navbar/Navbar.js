@@ -1,5 +1,4 @@
 import React from "react";
-import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 function Navbar() {
@@ -7,7 +6,7 @@ function Navbar() {
     <header>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid navbar">
-          <a className="navbar-brand" href="#">
+          <a className="navbar-brand" href="/">
             MERN CRUD APP
           </a>
           <button

@@ -29,7 +29,7 @@ function Register() {
 
   useEffect(() => {
     getUsersData();
-  }, []);
+  });
 
   console.log(userSingleData);
 
