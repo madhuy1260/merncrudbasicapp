@@ -17,10 +17,13 @@ function View() {
   const navigate = useNavigate("");
 
   const getUsersData = async () => {
-    const resp = await fetch(`http://localhost:8000/getData/${id}`, {
-      method: "GET",
-      headers: { "Content-Type": "application/json" },
-    });
+    const resp = await fetch(
+      `https://mernstack-crud-userapp.herokuapp.com/getData/${id}`,
+      {
+        method: "GET",
+        headers: { "Content-Type": "application/json" },
+      }
+    );
     const data = await resp.json();
 
     if (resp.status === 404 || !data) {
@@ -35,10 +38,13 @@ function View() {
   }, []);
 
   const deleteUser = async (id) => {
-    const resp = await fetch(`http://localhost:8000/deleteUser/${id}`, {
-      method: "DELETE",
-      headers: { "Content-Type": "application/json" },
-    });
+    const resp = await fetch(
+      `https://mernstack-crud-userapp.herokuapp.com/deleteUser/${id}`,
+      {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+      }
+    );
     const deletedData = await resp.json();
     console.log(deletedData);
 

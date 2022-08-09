@@ -21,21 +21,24 @@ function Register() {
     e.preventDefault();
     const { Name, Email, Age, MobileNumber, Work, Address, Description } =
       inputValues;
-    const res = await fetch("http://localhost:8000/register", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        Name,
-        Email,
-        Age,
-        MobileNumber,
-        Work,
-        Address,
-        Description,
-      }),
-    });
+    const res = await fetch(
+      "https://mernstack-crud-userapp.herokuapp.com/register",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          Name,
+          Email,
+          Age,
+          MobileNumber,
+          Work,
+          Address,
+          Description,
+        }),
+      }
+    );
     const resData = await res.json();
     console.log(resData);
 

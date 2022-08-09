@@ -11,10 +11,13 @@ function Register() {
   const navigate = useNavigate("");
 
   const getUsersData = async () => {
-    const resp = await fetch(`http://localhost:8000/getData/${id}`, {
-      method: "GET",
-      headers: { "Content-Type": "application/json" },
-    });
+    const resp = await fetch(
+      `https://mernstack-crud-userapp.herokuapp.com/getData/${id}`,
+      {
+        method: "GET",
+        headers: { "Content-Type": "application/json" },
+      }
+    );
     const data = await resp.json();
 
     if (resp.status === 404 || !data) {
@@ -34,19 +37,22 @@ function Register() {
     e.preventDefault();
     const { Name, Email, Work, Address, MobileNumber, Description, Age } =
       userSingleData;
-    const respupdate = await fetch(`http://localhost:8000/updateUser/${id}`, {
-      method: "PATCH",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        Name,
-        Email,
-        Work,
-        Address,
-        MobileNumber,
-        Description,
-        Age,
-      }),
-    });
+    const respupdate = await fetch(
+      `https://mernstack-crud-userapp.herokuapp.com/updateUser/${id}`,
+      {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          Name,
+          Email,
+          Work,
+          Address,
+          MobileNumber,
+          Description,
+          Age,
+        }),
+      }
+    );
     const updatedData = await respupdate.json();
     console.log(updatedData);
 

@@ -5,10 +5,13 @@ function Home() {
   const [userData, setUserData] = useState([]);
 
   const getUsersData = async () => {
-    const resp = await fetch("http://localhost:8000/getData", {
-      method: "GET",
-      headers: { "Content-Type": "application/json" },
-    });
+    const resp = await fetch(
+      "https://mernstack-crud-userapp.herokuapp.com/getData",
+      {
+        method: "GET",
+        headers: { "Content-Type": "application/json" },
+      }
+    );
     const data = await resp.json();
 
     if (resp.status === 404 || !data) {
@@ -23,10 +26,13 @@ function Home() {
   }, []);
 
   const deleteUser = async (id) => {
-    const resp = await fetch(`http://localhost:8000/deleteUser/${id}`, {
-      method: "DELETE",
-      headers: { "Content-Type": "application/json" },
-    });
+    const resp = await fetch(
+      `https://mernstack-crud-userapp.herokuapp.com/deleteUser/${id}`,
+      {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+      }
+    );
     const deletedData = await resp.json();
     console.log(deletedData);
 
