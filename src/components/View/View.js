@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React from "react";
 import { useEffect, useState } from "react";
 import ModeEditOutlineIcon from "@mui/icons-material/ModeEditOutline";
@@ -34,7 +35,7 @@ function View() {
 
   useEffect(() => {
     getUsersData();
-  });
+  }, []);
 
   const deleteUser = async (id) => {
     const resp = await fetch(

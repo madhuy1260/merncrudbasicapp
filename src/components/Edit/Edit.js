@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React from "react";
 import { useState, useEffect } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
@@ -29,7 +30,7 @@ function Register() {
 
   useEffect(() => {
     getUsersData();
-  });
+  }, []);
 
   console.log(userSingleData);
 

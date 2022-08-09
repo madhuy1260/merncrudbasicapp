@@ -23,7 +23,7 @@ function Home() {
 
   useEffect(() => {
     getUsersData();
-  });
+  }, []);
 
   const deleteUser = async (id) => {
     const resp = await fetch(
